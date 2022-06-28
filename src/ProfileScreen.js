@@ -3,7 +3,9 @@ import { Button, Text, StyleSheet, View } from "react-native";
 import { AuthContext } from "./utils";
 
 export function ProfileScreen({navigation}) {
-  const { userToken } = React.useContext(AuthContext);
+  const { store } = React.useContext(AuthContext);
+  console.log("Here iam in profile screen::", store);
+  const userToken = store.userToken;
 
   return (
     <View style={styles.container}>
