@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Button, StyleSheet, Text, TextInput, View } from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
+import { Button } from "react-native-paper";
 import { AuthContext } from "./utils";
 
 export function SignInScreen() {
@@ -23,7 +24,13 @@ export function SignInScreen() {
         onChangeText={setPassword}
         secureTextEntry
       />
-      <Button title="Sign in" onPress={() => signIn({ username, password })} />
+      <Button
+        style={styles.btnInput}
+        mode="outlined"
+        onPress={() => signIn({ username, password })}
+      >
+        Sign in
+      </Button>
     </View>
   );
 }
@@ -39,6 +46,11 @@ const styles = StyleSheet.create({
     width: "90%",
     borderColor: "gray",
     borderWidth: 1,
-    marginBottom: 5,
+    marginBottom: 8,
+  },
+  btnInput: {
+    height: 50,
+    width: "90%",
+    justifyContent: "center",
   },
 });
