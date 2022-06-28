@@ -7,14 +7,7 @@ export function HomeScreen({ navigation }) {
   const { signOut, store } = React.useContext(AuthContext);
   console.log("Here iam in home screen::", store);
   let userToken = store.userToken;
-  // useEffect(() => {
-  //   const store = getAuthStore();
-  //   console.log("Here iam in home screen::", state);
-  // });
-
-  // const [userToken, setUserToken] = React.useState("");
-  // const store = getAuthStore();
-
+  
   // React.useEffect(() => {
   //   // Fetch the token from storage then navigate to our appropriate place
   //   // const bootstrapAsync = async () => {
