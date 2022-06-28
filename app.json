@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "auth_flow",
-    "slug": "auth_flow",
+    "name": "rn_expo_auth_flow",
+    "slug": "rn_expo_auth_flow",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
