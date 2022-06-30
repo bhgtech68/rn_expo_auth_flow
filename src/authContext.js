@@ -1,6 +1,9 @@
+import * as React from "react";
+export const AuthContext = React.createContext();
+
 // process and dispatch function to update state, and store state
 
-export const authContext = (store, dispatch) => ({
+export const authContextValue = (store, dispatch) => ({
   signIn: async (data) => {
     // In a production app, we need to send some data (usually username, password) to server and get a token
     // We will also need to handle errors if sign in failed
@@ -18,5 +21,5 @@ export const authContext = (store, dispatch) => ({
     // console.log("signUp data::", data);
     dispatch({ type: "SIGN_IN", token: "TOKEN_DUMMY_FROM_SIGNUP" });
   },
-  store
-})
+  store,
+});

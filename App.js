@@ -5,9 +5,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { SplashScreen, HomeScreen, SignInScreen, ProfileScreen } from "./src";
-import { AuthContext } from "./src/utils";
+import { AuthContext } from "./src/authContext";
 import { authState, authReducer } from "./src/authReducer";
-import { authContext } from "./src/authContext";
+import { authContextValue } from "./src/authContext";
 
 const Stack = createStackNavigator();
 
@@ -41,17 +41,17 @@ export default function App({ navigation }) {
     bootstrapAsync();
   }, []);
 
-  const authContextValue = React.useMemo(() => {
+  const value = React.useMemo(() => {
     const store = {
       userToken: state.userToken,
     };
-    return authContext(store, dispatch);
+    return authContextValue(store, dispatch);
   }, [state.userToken]);
 
   return (
     <PaperProvider>
       <SafeAreaProvider>
-        <AuthContext.Provider value={authContextValue}>
+        <AuthContext.Provider value={value}>
           <NavigationContainer>
             <Stack.Navigator>
               {state.isLoading ? (

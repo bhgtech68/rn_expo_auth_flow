@@ -1,7 +1,7 @@
 import * as React from "react";
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import { Button } from "react-native-paper";
-import { AuthContext } from "./utils";
+import { AuthContext } from "./authContext";
 
 export function SignInScreen() {
   const [username, setUsername] = React.useState("");

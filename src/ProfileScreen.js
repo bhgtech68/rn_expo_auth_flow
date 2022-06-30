@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Button, Text, StyleSheet, View } from "react-native";
-import { AuthContext } from "./utils";
+import { AuthContext } from "./authContext";
 
 export function ProfileScreen({navigation}) {
   const { store } = React.useContext(AuthContext);
